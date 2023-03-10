@@ -13,16 +13,18 @@
   },
   "scripts": {
     "lint": "npm-run-all --parallel --continue-on-error lint:*",
-    "lint:css": "stylelint '**/*.scss'",
-    "lint:formatting": "prettier --check '**/*.{scss,js,json}'",
+    "lint:css": "stylelint '{_sass,assets}/**/*.scss'",
+    "lint:formatting": "prettier --check '{_sass,assets}/**/*.{scss,js,json}'",
     "format": "prettier --write '**/*.{scss,js,json}'",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "stylelint-check": "stylelint-config-prettier-check"
   },
   "stylelint": {
     "ignoreFiles": [
       "assets/css/just-the-docs-default.scss",
       "assets/css/just-the-docs-light.scss",
       "assets/css/just-the-docs-dark.scss",
+      "assets/css/just-the-docs-sfos.scss",
       "_sass/vendor/**/*.scss"
     ],
     "extends": [
